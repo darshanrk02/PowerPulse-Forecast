@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Flask App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/homePageStyle.css') }}">
+</head>
+
+<body>
+    <div class="simple">
+        <div class="header-container">
+            <h1 align="center">Electricity price forecasting for New-Zealand</h1>
+        </div>
+
+        <div class="paragraph-container">
+            <p>
+                Our project is committed to advancing energy market intelligence in New Zealand through the deployment of cutting-edge machine learning and deep learning models. Through extensive model comparisons, we have determined that LSTM (Long Short-Term Memory) networks outperform other methods for electricity price prediction. As a result, we've exclusively adopted LSTM models to provide you with the most accurate and dependable electricity price forecasts.
+            </p>
+        </div>
+    </div>
+
+    <!--Taking Input from User-->
+    <form action="/" method="POST">
+        <div class="column">
+            <div>
+                <!--Generation by Biomass-->
+                <label>Enter Generation by Biomass:
+                    <input type="number" name="generation_biomass" placeholder="Generation by Biomass">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Fossil Brown Coal/Lignite-->
+                <label>Enter Generation by Fossil Brown Coal/Lignite:
+                    <input type="number" name="generation_lignite" placeholder="Generation by Brown Coal/Lignite">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Fossil Gas-->
+                <label>Enter Generation by Fossil Gas:
+                    <input type="number" name="generation_fossil_gas" placeholder="Generation by Fossil Gas">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Fossil Hard Coal-->
+                <label>Enter Generation by Fossil Hard Coal:
+                    <input type="number" name="generation_fossil_hard_coal" placeholder="Generation by Fossil Hard Coal">
+                </label>
+            </div>
+
+            <div> 
+                <!--Generation by Fossil Oil-->
+                <label>Enter Generation by Fossil Oil:
+                    <input type="number" name="generation_fossil_oil" placeholder="Generation by Fossil Oil">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Hydro Pumped Storage-->
+                <label>Enter Generation by Hydro Pumped Storage:
+                    <input type="number" name="generation_hydro_pump" placeholder="Generation by Hydro Pump Storage">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by River-Runoff-->
+                <label>Enter Generation by River-Runoff:
+                    <input type="number" name="generation_river_runoff" placeholder="Generation by River-Runoff">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Hydro-Water Reservoir-->
+                <label>Enter Generation by Hydro-Water Reservoir:
+                    <input type="number" name="generation_hydro_water" placeholder="Generation by Hydro Water Reservoir">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Nuclear-->
+                <label>Enter Generation by Nuclear:
+                    <input type="number" name="generation_nuclear" placeholder="Generation by Nuclear">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Others-->
+                <label>Enter Generation by Others:
+                    <input type="number" name="generation_other" placeholder="Generation by Others">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Others Renewable-->
+                <label>Enter Generation by Others Renewable:
+                    <input type="number" name="generation_other_renew" placeholder="Generation by Others Renewable">
+                </label>
+            </div>
+
+        </div>
+
+        <div class="column">
+
+            <div>
+                <!--Generation by Solar-->
+                <label>Enter Generation by Solar:
+                    <input type="number" name="generation_solar" placeholder="Generation by Solar">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Waste-->
+                <label>Enter Generation by Waste:
+                    <input type="number" name="generation_waste" placeholder="Generation by Waste">
+                </label>
+            </div>
+
+            <div>
+                <!--Generation by Wind Onshore-->
+                <label>Enter Generation by Wind Onshore:
+                    <input type="number" name="generation_wind_onshore" placeholder="Generation by Wind Onshore">
+                </label>
+            </div>
+
+            <div>
+                <!--Forecast Solar Day Ahead-->
+                <label>Enter Forecast Solar Day Ahead:
+                    <input type="number" name="forecast_solar_day" placeholder="Forecast Solar Day Ahead">
+                </label>
+            </div>
+
+            <div>
+                <!--Forecast Solar Day Ahead-->
+                <label>Enter Forecast Solar Day Ahead:
+                    <input type="number" name="forecast_wind_day" placeholder="Forecast Windy Day Ahead">
+                </label>
+            </div>
+
+            <div>
+                <!--Total Load Forecast-->
+                <label>Enter Total Load Forecast:
+                    <input type="number" name="forecast_total_load" placeholder="Total Load Forecast">
+                </label>
+            </div>
+
+            <div>
+                <!--Total Load Actual-->
+                <label>Enter Total Load Actual:
+                    <input type="number" name="actual_total_load" placeholder="Total Load Actual">
+                </label>
+            </div>
+
+            <div>
+                <!--Price Day Ahead-->
+                <label>Enter Price Day Ahead:
+                    <input type="number" name="price_day_ahead" placeholder="Price Day Ahead">
+                </label>
+            </div>
+
+            <div>
+                <label>Enter Generation by Biomass:
+                    <input type="number" name="generation_biomass" placeholder="Generation by Biomass">
+                </label>
+            </div>
+
+            <div>
+                <label>Enter Generation by Fossil Brown Coal/Lignite:
+                    <input type="number" name="generation_lignite" placeholder="Generation by Brown Coal/Lignite">
+                </label>
+            </div>
+
+        </div>
+
+        <div class = "submit">
+            <button type="submit" id="submit-button">Submit</button>
+    <!--        <input type="submit">-->
+        </div>
+        
+    </form>
+
+    <div class="output">
+        <h1 align="center">{{ predicted_price }}</h1>
+    </div>
+
+    <div id="grad1"></div>
+</body>
+</html>
